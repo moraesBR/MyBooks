@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">My Books</string>
+    <string name="title_activity_ebook">Cadastrar E-Book</string>
+    <string name="title_activity_main">E-Book Store</string>
+    <string name="title_home">Home</string>
+    <string name="title_ebook">Novo</string>
+    <string name="title_romance">Romances</string>
+    <string name="title_negocios">Negócios</string>
+    <string name="title_tecnicos">Técnicos</string>
+    <string name="item_book_title">Título:</string>
+    <string name="item_book_genero">Gênero:</string>
+    <string name="item_book_isbn">ISBN:</string>
+    <string name="item_book_resume">Resumo:</string>
+    <string name="item_book_authors">Autores:</string>
+    <string name="item_book_descriptionimage">Cover book</string>
+    <string name="title">Título:</string>
+    <string name="text_title">Senhor dos anéis - as duas torres</string>
+    <string name="text_genre">Romance</string>
+    <string name="text_isbn">9788373191723</string>
+    <string name="text_resume">Frodo, seus amigos e os contínuos esforços para destruir o anel. Frodo e Sam descobrem que estão sendo seguidos pelo misterioso Gollum. Enquanto isso, Aragorn, o elfo e arqueiro Legolas e o anão Gimli chegam ao reino de Rohan, onde o rei Theoden foi vítima de uma maldição mortal de Saruman.</string>
+</resources>

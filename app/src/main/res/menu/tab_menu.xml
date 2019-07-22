@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_menu_home"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_romances"
+        android:icon="@drawable/ic_menu_novels"
+        android:title="@string/title_romance" />
+
+    <item
+        android:id="@+id/navigation_negocios"
+        android:icon="@drawable/ic_menu_business"
+        android:title="@string/title_negocios" />
+
+    <item
+        android:id="@+id/navigation_tecnicos"
+        android:icon="@drawable/ic_menu_technical"
+        android:title="@string/title_tecnicos" />
+
+    <item
+        android:id="@+id/navigation_ebook"
+        android:icon="@drawable/ic_menu_newbook"
+        android:title="@string/title_ebook" />
+
+</menu>

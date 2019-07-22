@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_gravity="center"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardTitleEbook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/cardview_margininner"
+        >
+
+        <TextView
+            android:id="@+id/title_newbook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CADASTRAR LIVRO"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_margin="@dimen/cardview_margininner"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <ScrollView
+        android:layout_below="@+id/cardTitleEbook"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/cardview_margininner"
+                android:layout_margin="@dimen/cardview_margininner"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/cardview_margininner"
+                    android:orientation="vertical"
+                    >
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilEbook"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/titleEbook"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/title"
+                            android:inputType="text"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilISBN"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/isbnEbook"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/item_book_isbn"
+                            android:inputType="text"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilCoverEbook"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/coverEbook"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Capa do livro [URL]:"
+                            android:inputType="text"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilAuthorsEbook"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/authorsEbook"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Autor:"
+                            android:inputType="text"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilResumeEbook"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/resumeEbook"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/item_book_resume"
+                            android:inputType="text"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="@dimen/cardview_margininner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="7"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:text="@string/item_book_genero"
+                            android:gravity="center_vertical"
+                            android:textSize="17sp"
+                            android:layout_marginStart="4dp"
+                            />
+
+                        <Spinner
+                            android:id="@+id/genreEbook"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="6"
+
+                            android:gravity="center"
+                            android:layout_gravity="center_vertical"
+                            android:spinnerMode="dropdown"
+                            android:entries="@array/genre"
+                            style="@android:style/Widget.Material.Light.Spinner.Underlined"
+                            >
+
+
+                        </Spinner>
+
+                        <!-- ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="end"
+                            android:src="@drawable/baseline_arrow_drop_down_24" /
+                            -->
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnRegistrar"
+                        android:layout_marginTop="@dimen/cardview_margininner"
+                        android:layout_gravity="end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="REGISTRAR"
+                        android:textStyle="bold"
+                        style="@style/TextAppearance.MaterialComponents.Button"
+                        android:padding="@dimen/cardview_margininner"
+                        android:backgroundTint="@color/colorAccent"
+                        />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>
