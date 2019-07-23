@@ -92,6 +92,7 @@ public class TabNewBook extends Fragment {
             test = true;
             txtIsbn.setError("");
         }
+        return test;
     }
 
     @Nullable
