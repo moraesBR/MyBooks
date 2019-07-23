@@ -112,7 +112,7 @@
                             android:id="@+id/authorsEbook"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="item_book_autor"
+                            android:hint="@string/item_book_authors"
                             android:inputType="text"
                             />
 
