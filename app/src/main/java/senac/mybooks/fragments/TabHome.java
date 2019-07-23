@@ -18,15 +18,16 @@ import static senac.mybooks.MainActivity.ebookList;
 
 public class TabHome extends Fragment {
     private RecyclerView rvEbooks;
+    private View view;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home,container,false);
+        view = inflater.inflate(R.layout.fragment_home,container,false);
         rvEbooks = view.findViewById(R.id.list_ebooks);
         rvEbooks.setHasFixedSize(true);
-        rvEbooks.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
-        rvEbooks.setAdapter(new EbookAdapter(ebookList,getContext()));
+        rvEbooks.setLayoutManager(new LinearLayoutManager(view.getContext(),RecyclerView.VERTICAL,false));
+        rvEbooks.setAdapter(new EbookAdapter(ebookList,view.getContext()));
 
         return view;
 

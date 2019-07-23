@@ -3,16 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         >
         <LinearLayout
             android:layout_margin="@dimen/cardview_margininner"
             android:layout_height="match_parent"
             android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical"
             android:weightSum="3"
             android:baselineAligned="false">
 
@@ -41,12 +43,13 @@
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="2"
+                android:layout_gravity="center_vertical"
                 android:orientation="vertical"
                 >
                 <LinearLayout
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:weightSum="4"
+                    android:weightSum="3"
                     >
                     <TextView
                         android:layout_height="match_parent"
@@ -60,7 +63,7 @@
                         android:id="@+id/titleBook"
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
-                        android:layout_weight="3"
+                        android:layout_weight="2"
                         android:text="@string/text_title"
                         style="@style/TextAppearance.MaterialComponents.Body2"
                         />
@@ -68,7 +71,7 @@
                 <LinearLayout
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:weightSum="4"
+                    android:weightSum="3"
                     >
                     <TextView
                         android:layout_height="match_parent"
@@ -81,7 +84,7 @@
                         android:id="@+id/genreBook"
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
-                        android:layout_weight="3"
+                        android:layout_weight="2"
                         android:text="@string/text_genre"
                         android:layout_gravity="center"
                         style="@style/TextAppearance.MaterialComponents.Body2"
@@ -90,7 +93,7 @@
                 <LinearLayout
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:weightSum="4"
+                    android:weightSum="3"
                     >
                     <TextView
                         android:layout_height="match_parent"
@@ -103,7 +106,7 @@
                         android:id="@+id/isbnBook"
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
-                        android:layout_weight="3"
+                        android:layout_weight="2"
                         android:text="@string/text_isbn"
                         android:layout_gravity="center"
                         style="@style/TextAppearance.MaterialComponents.Body2"
@@ -112,7 +115,7 @@
                 <LinearLayout
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:weightSum="4"
+                    android:weightSum="3"
                     >
                     <TextView
                         android:layout_height="match_parent"
@@ -125,7 +128,7 @@
                         android:id="@+id/resumeBook"
                         android:layout_height="match_parent"
                         android:layout_width="0dp"
-                        android:layout_weight="3"
+                        android:layout_weight="2"
                         android:text="@string/text_resume"
                         android:layout_gravity="center"
                         style="@style/TextAppearance.MaterialComponents.Body2"
@@ -134,7 +137,7 @@
                 <LinearLayout
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:weightSum="4"
+                    android:weightSum="3"
                     >
                     <TextView
                         android:layout_height="match_parent"
@@ -148,7 +151,7 @@
                         android:id="@+id/authorsBook"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
+                        android:layout_weight="2"
                         tools:listitem="@layout/item_author"
                         />
                 </LinearLayout>

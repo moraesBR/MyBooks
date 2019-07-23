@@ -1,6 +1,7 @@
 package senac.mybooks.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,16 +33,34 @@ public class TabNewBook extends Fragment {
         public void onClick(View view) {
 
             try {
-                if (txtIsbn.getText().toString().isEmpty()) {
+                if (valid()) {
                     throw new Exception("IBSN is empty");
                 }
                 Ebook ebook = new Ebook();
+
                 ebook.setIsbn(txtIsbn.getText().toString());
-                ebook.setTitle(txtTitulo.getText().toString());
                 ebook.setGenre(Genre.valueOf(spTipo.getSelectedItem().toString().toUpperCase()));
-                ebook.setResume(txtSinopse.getText().toString());
-                ebook.addAuthor(txtAutor.getText().toString());
-                ebook.setUrlImage(txtUrlCapa.getText().toString());
+
+                if(!txtTitulo.getText().toString().isEmpty())
+                    ebook.setTitle(txtTitulo.getText().toString());
+                else
+                    ebook.setTitle("Sem título");
+
+                if(!txtSinopse.getText().toString().isEmpty())
+                    ebook.setResume(txtSinopse.getText().toString());
+                else
+                    ebook.setResume("Sem resumo");
+
+                if(!txtAutor.getText().toString().isEmpty())
+                    ebook.addAuthor(txtAutor.getText().toString());
+                else
+                    ebook.addAuthor(txtAutor.getText().toString());
+
+                if (!txtUrlCapa.getText().toString().isEmpty())
+                    ebook.setUrlImage(txtUrlCapa.getText().toString());
+                else
+                    ebook.setUrlImage("https://cdn.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png");
+
                 ebookList.add(ebook);
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -49,13 +68,12 @@ public class TabNewBook extends Fragment {
                         ebook.getGenre().toString() + "/" +
                         ebook.getIsbn());
                 myRef.setValue(ebook);
-                //cleanscreen();
-                //getFragmentManager().beginTransaction().hide(getFragmentManager().findFragmentByTag("5")).show(getFragmentManager().findFragmentByTag("6")).commit();
+
+                cleanscreen();
             } catch (Exception e) {
                 //cleanscreen();
                 e.printStackTrace();
             }
-            cleanscreen();
         }
     };
 
@@ -68,11 +86,18 @@ public class TabNewBook extends Fragment {
         spTipo.setSelection(0);
     }
 
+    private boolean valid(){
+        boolean test = false;
+        if(txtIsbn.getText().toString().isEmpty()){
+            test = true;
+            txtIsbn.setError("");
+        }
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_newbook, container, false);
-        //FragmentActivity fragmentActivity = getActivity();
 
         txtTitulo = view.findViewById(R.id.titleEbook);
         txtIsbn = view.findViewById(R.id.isbnEbook);

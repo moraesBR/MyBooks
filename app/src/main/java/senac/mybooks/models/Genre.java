@@ -1,9 +1,9 @@
 package senac.mybooks.models;
 
 public enum Genre {
-    NOVEL("novel"),
-    BUSINESS("business"),
-    TECHNICIAN("technician");
+    ROMANCE("Romance"),
+    NEGÓCIO("Negócio"),
+    TÉCNICO("Técnico");
 
     private final String genre;
 

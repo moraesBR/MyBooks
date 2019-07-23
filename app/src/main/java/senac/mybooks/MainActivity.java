@@ -13,10 +13,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import senac.mybooks.adapters.TabAdapter;
+import senac.mybooks.fragments.TabHome;
+import senac.mybooks.fragments.TabNewBook;
 import senac.mybooks.models.Ebook;
 
 public class MainActivity extends AppCompatActivity {
     public static List<Ebook> ebookList = new ArrayList<Ebook>();
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private TabAdapter tabAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +30,21 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setActionBar(toolbar);
 
-        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        tabLayout = findViewById(R.id.tab_layout);
+        viewPager = findViewById(R.id.pager);
+        tabAdapter = new TabAdapter(getSupportFragmentManager());
+
+        tabAdapter.addFragment(new TabHome(),"");
+        tabAdapter.addFragment(new TabNewBook(),"");
+        viewPager.setAdapter(tabAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_menu_home);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_menu_newbook);
+
+
+
+        /*TabLayout tabLayout = findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Home"));
         tabLayout.addTab(tabLayout.newTab().setText("New Book"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
@@ -33,6 +52,13 @@ public class MainActivity extends AppCompatActivity {
         final ViewPager viewPager = findViewById(R.id.pager);
         TabAdapter tabAdapter = new TabAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
         viewPager.setAdapter(tabAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_menu_home);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_menu_newbook);*/
+
+
+
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -50,5 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
     }
 }
