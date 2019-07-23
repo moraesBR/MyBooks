@@ -1,18 +1,13 @@
 package senac.mybooks;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toolbar;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import senac.mybooks.adapters.TabAdapter;
 import senac.mybooks.fragments.TabBusiness;
@@ -20,10 +15,9 @@ import senac.mybooks.fragments.TabHome;
 import senac.mybooks.fragments.TabNewBook;
 import senac.mybooks.fragments.TabNovel;
 import senac.mybooks.fragments.TabTechnical;
-import senac.mybooks.models.Ebook;
 import senac.mybooks.models.FirebaseEbook;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private TabAdapter tabAdapter;
