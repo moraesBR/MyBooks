@@ -20,7 +20,8 @@ import senac.mybooks.R;
 import senac.mybooks.models.Ebook;
 import senac.mybooks.models.Genre;
 
-import static senac.mybooks.MainActivity.ebookList;
+import static senac.mybooks.MainActivity.firebaseEbook;
+import static senac.mybooks.MainActivity.toolbar;
 
 public class TabNewBook extends Fragment {
 
@@ -33,9 +34,11 @@ public class TabNewBook extends Fragment {
         public void onClick(View view) {
 
             try {
-                if (valid()) {
+                if (txtIsbn.getText().toString().isEmpty()) {
+                    txtIsbn.setError("Obrigatório");
                     throw new Exception("IBSN is empty");
                 }
+
                 Ebook ebook = new Ebook();
 
                 ebook.setIsbn(txtIsbn.getText().toString());
@@ -54,20 +57,14 @@ public class TabNewBook extends Fragment {
                 if(!txtAutor.getText().toString().isEmpty())
                     ebook.addAuthor(txtAutor.getText().toString());
                 else
-                    ebook.addAuthor(txtAutor.getText().toString());
+                    ebook.addAuthor("Desconhecido");
 
                 if (!txtUrlCapa.getText().toString().isEmpty())
                     ebook.setUrlImage(txtUrlCapa.getText().toString());
                 else
                     ebook.setUrlImage("https://cdn.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png");
 
-                ebookList.add(ebook);
-
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("ebook/"+
-                        ebook.getGenre().toString() + "/" +
-                        ebook.getIsbn());
-                myRef.setValue(ebook);
+                firebaseEbook.insert(ebook);
 
                 cleanscreen();
             } catch (Exception e) {
@@ -86,23 +83,14 @@ public class TabNewBook extends Fragment {
         spTipo.setSelection(0);
     }
 
-    private boolean valid(){
-        boolean test = false;
-        if(txtIsbn.getText().toString().isEmpty()){
-            test = true;
-            txtIsbn.setError("");
-        }
-        return test;
-    }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_newbook, container, false);
-
+        /*toolbar.setTitle(R.string.title_ebook);*/
         txtTitulo = view.findViewById(R.id.titleEbook);
         txtIsbn = view.findViewById(R.id.isbnEbook);
-        txtIsbn.setError("Obrigatório!");
+        txtIsbn.setError("Obrigatório");
         txtUrlCapa = view.findViewById(R.id.coverEbook);
         txtAutor = view.findViewById(R.id.authorsEbook);
         txtSinopse = view.findViewById(R.id.resumeEbook);

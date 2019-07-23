@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/title_home"
-        style="@style/TextAppearance.AppCompat.Body1"
+        android:id="@+id/title_technician"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="TÉCNICOS"
+        android:textSize="@dimen/fragment_title_size"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:textStyle="bold"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:gravity="center"
         android:layout_marginTop="@dimen/cardview_margininner"
         android:layout_marginBottom="@dimen/cardview_margininner"
-        android:gravity="center"
-        android:text="TODOS"
-        android:textSize="@dimen/fragment_title_size"
-        android:textStyle="bold" />
+        />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_ebooks"
+        android:id="@+id/list_technician_ebooks"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/title_home" />
+        android:layout_below="@+id/title_technician" />
 
 </RelativeLayout>

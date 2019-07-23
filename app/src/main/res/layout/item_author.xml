@@ -7,6 +7,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="John Ronald Reuel Tolkien"
-        style="@style/TextAppearance.AppCompat.Body2"
         />
 </LinearLayout>

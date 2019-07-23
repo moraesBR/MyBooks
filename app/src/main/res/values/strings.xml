@@ -18,4 +18,5 @@
     <string name="text_genre">Romance</string>
     <string name="text_isbn">9788373191723</string>
     <string name="text_resume">Frodo, seus amigos e os contínuos esforços para destruir o anel. Frodo e Sam descobrem que estão sendo seguidos pelo misterioso Gollum. Enquanto isso, Aragorn, o elfo e arqueiro Legolas e o anão Gimli chegam ao reino de Rohan, onde o rei Theoden foi vítima de uma maldição mortal de Saruman.</string>
+    <string name="item_book_url_capa">Capa do livro [URL]:</string>
 </resources>

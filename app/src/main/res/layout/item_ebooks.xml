@@ -1,159 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
+        style="@style/Widget.MaterialComponents.CardView"
         >
+
         <LinearLayout
-            android:layout_margin="@dimen/cardview_margininner"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/cardview_margininner"
+            android:baselineAligned="false"
+            android:gravity="center_vertical"
             android:weightSum="3"
-            android:baselineAligned="false">
+            android:background="@drawable/square"
+            >
 
             <LinearLayout
-                android:layout_height="match_parent"
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical"
                 android:gravity="top|center_horizontal"
-                >
-                <ProgressBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    />
+                android:orientation="vertical">
+
                 <ImageView
                     android:id="@+id/imageBook"
                     android:layout_width="@dimen/imagecover_width"
                     android:layout_height="@dimen/imagecover_height"
                     android:layout_marginTop="@dimen/cardview_margininner"
                     android:layout_marginBottom="@dimen/cardview_margininner"
-                    android:src="@drawable/senhor_dos_aneis_as_duas_torres"
-                    android:contentDescription="@string/item_book_descriptionimage" />
+                    android:contentDescription="@string/item_book_descriptionimage"
+                    android:layout_gravity="center"
+                    android:src="@drawable/senhor_dos_aneis_as_duas_torres" />
             </LinearLayout>
-            <LinearLayout
-                android:layout_height="match_parent"
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:layout_gravity="center_vertical"
-                android:orientation="vertical"
-                >
-                <LinearLayout
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
-                    android:weightSum="3"
-                    >
-                    <TextView
-                        android:layout_height="match_parent"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:text="@string/item_book_title"
 
-                        style="@style/TextAppearance.AppCompat.Body2"
-                        />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="6dp"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/item_book_title" />
+
                     <TextView
                         android:id="@+id/titleBook"
-                        android:layout_height="match_parent"
                         android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="6dp"
                         android:layout_weight="2"
-                        android:text="@string/text_title"
-                        style="@style/TextAppearance.MaterialComponents.Body2"
-                        />
+                        android:text="@string/text_title" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:weightSum="3"
-                    >
+                    android:layout_height="wrap_content"
+                    android:weightSum="3">
+
                     <TextView
-                        android:layout_height="match_parent"
+                        style="@style/TextAppearance.AppCompat.Body1"
                         android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="@string/item_book_genero"
-                        style="@style/TextAppearance.AppCompat.Body2"
-                        />
+                        android:text="@string/item_book_genero" />
+
                     <TextView
                         android:id="@+id/genreBook"
-                        android:layout_height="match_parent"
                         android:layout_width="0dp"
-                        android:layout_weight="2"
-                        android:text="@string/text_genre"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
-                        style="@style/TextAppearance.MaterialComponents.Body2"
-                        />
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="2"
+                        android:text="@string/text_genre" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:weightSum="3"
-                    >
+                    android:layout_height="wrap_content"
+                    android:weightSum="3">
+
                     <TextView
-                        android:layout_height="match_parent"
+                        style="@style/TextAppearance.AppCompat.Body1"
                         android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="@string/item_book_isbn"
-                        style="@style/TextAppearance.AppCompat.Body2"
-                        />
+                        android:text="@string/item_book_isbn" />
+
                     <TextView
                         android:id="@+id/isbnBook"
-                        android:layout_height="match_parent"
                         android:layout_width="0dp"
-                        android:layout_weight="2"
-                        android:text="@string/text_isbn"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
-                        style="@style/TextAppearance.MaterialComponents.Body2"
-                        />
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="2"
+                        android:text="@string/text_isbn" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:weightSum="3"
-                    >
+                    android:layout_height="wrap_content"
+                    android:weightSum="3">
+
                     <TextView
-                        android:layout_height="match_parent"
+                        style="@style/TextAppearance.AppCompat.Body1"
                         android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="@string/item_book_resume"
-                        style="@style/TextAppearance.AppCompat.Body2"
-                        />
+                        android:text="@string/item_book_resume" />
+
                     <TextView
                         android:id="@+id/resumeBook"
-                        android:layout_height="match_parent"
                         android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="6dp"
                         android:layout_weight="2"
-                        android:text="@string/text_resume"
-                        android:layout_gravity="center"
-                        style="@style/TextAppearance.MaterialComponents.Body2"
-                        />
+                        android:text="@string/text_resume" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:weightSum="3"
-                    >
+                    android:layout_height="wrap_content"
+                    android:weightSum="3">
+
                     <TextView
-                        android:layout_height="match_parent"
+                        style="@style/TextAppearance.AppCompat.Body1"
                         android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="@string/item_book_authors"
-                        style="@style/TextAppearance.AppCompat.Body2"
-                        />
+                        android:text="@string/item_book_authors" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/authorsBook"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
                         android:layout_weight="2"
-                        tools:listitem="@layout/item_author"
-                        />
+                        tools:listitem="@layout/item_author" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

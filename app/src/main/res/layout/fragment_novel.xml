@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/title_home"
+        android:id="@+id/title_novels"
         style="@style/TextAppearance.AppCompat.Body1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,14 +14,14 @@
         android:layout_marginTop="@dimen/cardview_margininner"
         android:layout_marginBottom="@dimen/cardview_margininner"
         android:gravity="center"
-        android:text="TODOS"
+        android:text="ROMANCES"
         android:textSize="@dimen/fragment_title_size"
         android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_ebooks"
+        android:id="@+id/list_novel_ebooks"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/title_home" />
+        android:layout_below="@+id/title_novels" />
 
 </RelativeLayout>
